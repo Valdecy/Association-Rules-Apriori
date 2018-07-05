@@ -50,7 +50,7 @@ def ant_conseq_support(Xdata, antecedent, consequent):
 def apriori(Xdata, min_freq = 1):    
     min_frk_value = min_freq
     market_basket = list(Xdata.columns.values)
-    result = pd.DataFrame(columns = ["Antecedent", "Consequent", "Frequence", "Support(Antecedent)", "Support(Consequence)", "Support", "Confidence", "All Confidence", "Cosine", "Lift", "Conviction", "Interestingness"])
+    result = pd.DataFrame(columns = ["Antecedent", "Consequent", "Frequence", "Support(Antecedent)", "Support(Consequence)", "Support", "Confidence", "All Confidence", "Cosine", "Lift", "Conviction"])
     full_list = []
     rpt       = True
     print("********* Starting **********") 
@@ -119,12 +119,11 @@ def apriori(Xdata, min_freq = 1):
                     if (con == 1):
                         cov = float("inf")
                     else:
-                        cov = (1-scq)/(1-con)
-                    inr = (saq/san)*(saq/scq)*(1 - (saq/Xdata.shape[0]))                   
+                        cov = (1-scq)/(1-con)                 
                 stop = stop - 1               
                 if (stop == 0):
                     rpt =  False
-                result.loc[count] = [ant, cot, sum(frq), san, scq, saq, con, acf, cos, lif, cov, inr]     
+                result.loc[count] = [ant, cot, sum(frq), san, scq, saq, con, acf, cos, lif, cov]     
                 count = count + 1
                 ant = ""
                 cot = ""
