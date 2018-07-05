@@ -1,6 +1,6 @@
 # Association-Rules-Apriori
 
-Apriori algorithm an Association Rule Learning over Transactions Databases.The Function returns: 1) A list with the Association Rules and 2) The Same list with the following interestingness measures - a)"Frequence", b) "Suport(Antecedent)", c) "Suport(Consequence)", d) "Suport", e) "Confidence", f) "All Confidence", g) "Cosine", h) "Lift", i) "Conviction" and j) "Interestingness".
+Apriori algorithm an Association Rule Learning over Transactions Databases.The Function returns: 1) A list with the Association Rules and 2) The Same list with the following interestingness measures - a)"Frequence", b) "Support (Antecedent)", c) "Support (Consequence)", d) "Support", e) "Confidence", f) "All Confidence", g) "Cosine", h) "Lift", i) "Conviction" and j) "Interestingness".
 
 * Xdata = Transactions Database. If the Transactions Database is in the 0-1 format, follow the "Example 1)" in the end of the Python-DM-Association Rules-01.py file. However if the Transaction Database is in the list format, follow the "Example 2)" in the end of the Python-DM-Association Rules-01.py file.
 
