@@ -4,10 +4,10 @@
 # UFF - Universidade Federal Fluminense (Brazil)
 # email:  valdecy.pereira@gmail.com
 # Course: Data Mining
-# Lesson: Association Rules Apriori
+# Lesson: Association Rules - Apriori
 
 # Citation: 
-# PEREIRA, V. (2018). Project: Association Rules Apriori, File: Python-DM-Association Rules-01.py, GitHub repository: <https://github.com/Valdecy/Association_Rules_Apriori>
+# PEREIRA, V. (2018). Project: Association-Rules-Apriori, File: Python-DM-Association Rules-01.py, GitHub repository: <https://github.com/Valdecy/Association_Rules_Apriori>
 
 ############################################################################
 
@@ -73,7 +73,6 @@ def apriori(Xdata, min_freq = 1):
                         X_sub = X_sub[check >= X_sub.shape[1]]      
                         if (X_sub.shape[0] >= min_freq):
                             perm_list.append(list(list_name[i]) + [element])          
-            #list_name = ant_conseq_freq(Xdata, perm_list, min_frk = min_frk_value)
             print("Valid Permutation (n = ", count,")")
             list_name = perm_list.copy()
             if (len(list_name) > 0):
@@ -174,17 +173,9 @@ df = pd.read_csv('Python-DM-Association Rules-01a.csv', sep = ';')
 X = df
 
 a_rules_apriori_1 = apriori(X, min_freq = 3)
-a_rules_apriori_1[1].to_csv("apriori.csv", sep = ' ', index = True, header = True)
 
 # Example 2) Without 0-1 Transaction Matrix
 df = pd.read_csv('Python-DM-Association Rules-01b.csv', sep = ',', header = None)
 Y = transform_to_0_1_transaction_matrix(df)
 
 a_rules_apriori_2 = apriori(Y, min_freq = 4)
-a_rules_apriori_2[1].to_csv("apriori.csv", sep = ' ', index = True, header = True)
-
-df = pd.read_csv('Python-DM-Association Rules-01g.txt', sep = '\t')
-X = df.iloc[:,1:]
-
-a_rules_apriori = apriori(X, min_freq = 1)
-a_rules_apriori[1].to_csv("apriori.csv", sep = ' ', index = True, header = True)
